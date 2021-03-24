@@ -17,20 +17,18 @@
     </div>
   </header>
   <main class="container-fluid align-items-center bg-light flex-grow-1">
-    <div class="row">
-      <div class="col">
+    <div class="row mt-4">
+      <div class="col-6 text-center">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title">Make your choice:</h2>
-            <button type="button" class="btn btn-primary" onclick="playGame('ROCK')">Rock</button>
-            <button type="button" class="btn btn-primary" onclick="playGame('PAPER')">Paper</button>
-            <button type="button" class="btn btn-primary" onclick="playGame('SCISSORS')">Scissors</button>
+            <button type="button" class="btn btn-primary btn-lg mr-4" onclick="playGame('ROCK')">Rock</button>
+            <button type="button" class="btn btn-primary btn-lg mr-4" onclick="playGame('PAPER')">Paper</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="playGame('SCISSORS')">Scissors</button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
+      <div class="col-6 text-center">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title">Computer Choice:</h2>
@@ -39,11 +37,11 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
+    <div id="winnerCard" class="row mt-4 d-none">
+      <div class="col text-center">
         <div class="card">
-          <div class="card-body">
-              <h5 id="winner"></h5>
+          <div class="card-body d-flex align-items-center justify-content-center">
+              <h2 id="winner"></h2>
           </div>
         </div>
       </div>

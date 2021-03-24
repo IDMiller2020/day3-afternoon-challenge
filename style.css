@@ -3,3 +3,7 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+
+.card {
+  min-height: 15vh;
+}
