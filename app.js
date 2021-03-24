@@ -1,5 +1,4 @@
 let compRPS = ''
-
 function  computerChoice() {
   let randomChoice = 0
   randomChoice = (Math.floor(Math.random() * 3) + 1)
@@ -13,12 +12,10 @@ function  computerChoice() {
   document.getElementById('compChoice').innerText = `${compRPS}`
   return compRPS
 }
-
 function playGame(choice) {
   compRPS = computerChoice()
   document.getElementById('winnerCard').classList.remove('d-none')
   document.getElementById('wcb').classList.remove('bg-warning','bg-success', 'bg-danger')
-
   if (choice === compRPS) {
     document.getElementById('wcb').classList.remove('bg-*')
     document.getElementById('winner').innerText = 'Tie!'
@@ -41,8 +38,8 @@ function playGame(choice) {
     document.getElementById('wcb').classList.add('bg-danger')
   } else if (choice === 'SCISSORS' && compRPS === 'ROCK') {
     document.getElementById('wcb').classList.remove('bg-*')
-  document.getElementById('winner').innerText = 'The Computer winner!'
-  document.getElementById('wcb').classList.add('bg-danger')
+    document.getElementById('winner').innerText = 'The Computer winner!'
+    document.getElementById('wcb').classList.add('bg-danger')
   } else if (choice === 'SCISSORS' && compRPS === 'PAPER') {
     document.getElementById('wcb').classList.remove('bg-*')
     document.getElementById('winner').innerText = 'You are the winner!'
