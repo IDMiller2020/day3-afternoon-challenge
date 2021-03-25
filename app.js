@@ -17,32 +17,35 @@ function playGame(choice) {
   document.getElementById('winnerCard').classList.remove('d-none')
   document.getElementById('wcb').classList.remove('bg-warning','bg-success', 'bg-danger')
   if (choice === compRPS) {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'Tie!'
-    document.getElementById('wcb').classList.add('bg-warning')
+    drawWinner('tie')
   } else if (choice === 'ROCK' && compRPS === 'PAPER') {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'The Computer is the winner!'
-    document.getElementById('wcb').classList.add('bg-danger')
+    drawWinner('computer')
   } else if (choice === 'ROCK' && compRPS === 'SCISSORS') {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'You are the winner!'
-    document.getElementById('wcb').classList.add('bg-success')
+    drawWinner('user')
   } else if (choice === 'PAPER' && compRPS === 'ROCK') {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'You are the winner!'
-    document.getElementById('wcb').classList.add('bg-success')
+    drawWinner('user')
   } else if (choice === 'PAPER' && compRPS === 'SCISSORS') {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'The Computer is the winner!'
-    document.getElementById('wcb').classList.add('bg-danger')
+    drawWinner('computer')
   } else if (choice === 'SCISSORS' && compRPS === 'ROCK') {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'The Computer winner!'
-    document.getElementById('wcb').classList.add('bg-danger')
+    drawWinner('computer')
   } else if (choice === 'SCISSORS' && compRPS === 'PAPER') {
-    document.getElementById('wcb').classList.remove('bg-*')
-    document.getElementById('winner').innerText = 'You are the winner!'
-    document.getElementById('wcb').classList.add('bg-success')
+    drawWinner('user')
+  }
+
+  //  REFACTORING OF CODE
+  function drawWinner (winner) {
+    if (winner === 'tie') {
+      document.getElementById('wcb').classList.remove('bg-*')
+      document.getElementById('winner').innerText = 'Tie!'
+      document.getElementById('wcb').classList.add('bg-warning')
+    } else if (winner === 'user') {
+      document.getElementById('wcb').classList.remove('bg-*')
+      document.getElementById('winner').innerText = 'You are the winner!'
+      document.getElementById('wcb').classList.add('bg-success')
+    } else {
+      document.getElementById('wcb').classList.remove('bg-*')
+      document.getElementById('winner').innerText = 'The Computer winner!'
+      document.getElementById('wcb').classList.add('bg-danger')
+    }
   }
 }
